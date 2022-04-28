@@ -6,7 +6,8 @@ package utils.constants;
  */
 public enum Endpoint implements Constant<String> {
     BOOKING("/booking"),
-    BOOKING_ID("/booking/{booking_id}");
+    BOOKING_ID("/booking/{booking_id}"),
+    BOOKING_LASTNAME("/booking?lastname={lastname}");
 
     private String value;
 

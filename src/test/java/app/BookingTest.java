@@ -101,4 +101,15 @@ public class BookingTest extends TestBase {
         Assert.assertEquals(bookingParent.getBooking(), booking1);
     }
 
+    @Test
+    @Title("Search a booking by LastName")
+    @WithTag("sprint-5")
+    public void searchBookingByLastName() {
+        List<String> bookings = steps.getByKey("Martin", Endpoint.BOOKING.getValue())
+                .statusCode(200)
+                .extract()
+                .path("bookingid");
+
+        Assert.assertTrue(bookings.size()>0);
+    }
 }
